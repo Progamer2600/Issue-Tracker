@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -12,12 +13,14 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Window;
+import me.echols.issuetracker.Main;
 
 public class LoginForm {
 
-   public static GridPane loginPane = new GridPane();
 
-    public  GridPane createLoginForm() {
+    public static final GridPane loginPane = new GridPane();
+
+    public GridPane createLoginForm() {
 
         ColumnConstraints columnOneConstraints = new ColumnConstraints(100, 100, Double.MAX_VALUE);
         ColumnConstraints columnTwoConstrains = new ColumnConstraints(200,200,Double.MAX_VALUE);
@@ -26,7 +29,7 @@ public class LoginForm {
         loginPane.setAlignment(Pos.CENTER);
         loginPane.setPadding(new Insets(40,40,40,40));
         loginPane.setHgap(10);
-        loginPane.setVgap(10);
+        loginPane.setVgap(11);
 
         columnOneConstraints.setHgrow(Priority.ALWAYS);
         columnTwoConstrains.setHgrow(Priority.ALWAYS);

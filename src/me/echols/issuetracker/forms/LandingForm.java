@@ -55,6 +55,7 @@ public class LandingForm {
                 Scene scene = new Scene(login.loginPane, 800, 500);
                 login.createLoginForm();
 
+                Main.getStage().close();
                 Main.getStage().setScene(scene);
                 Main.getStage().show();
             }
@@ -70,6 +71,7 @@ public class LandingForm {
                 Scene scene = new Scene(registration.registerPane, 800, 500);
                 registration.createRegistrationForm();
 
+                Main.getStage().close();
                 Main.getStage().setScene(scene);
                 Main.getStage().show();
             }

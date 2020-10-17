@@ -20,9 +20,9 @@ import java.sql.SQLException;
 
 public class Registration {
   public static GridPane registerPane = new GridPane();
-  private LoginForm login = new LoginForm();
+  private static final LoginForm login = new LoginForm();
 
-    public GridPane createRegistrationForm() {
+    public static GridPane createRegistrationForm() {
 
         ColumnConstraints columnOneConstraints = new ColumnConstraints(100, 100, Double.MAX_VALUE);
         ColumnConstraints columnTwoConstrains = new ColumnConstraints(200,200,Double.MAX_VALUE);
@@ -41,7 +41,7 @@ public class Registration {
         return registerPane;
     }
 
-    private void addUIControls(GridPane gridPane) {
+    private static void addUIControls(GridPane gridPane) {
 
         //Create the header
         Label headerLabel = new Label("Registration");
@@ -126,29 +126,9 @@ public class Registration {
                         "Welcome " + firstNameField.getText() + " " + lastNameField.getText());
             }
         });
-        // Add Login Button
-        Button loginButton = new Button("Login");
-        loginButton.setPrefHeight(40);
-        loginButton.setDefaultButton(true);
-        loginButton.setPrefWidth(100);
-        gridPane.add(loginButton, 0,6,2,1);
-        GridPane.setHalignment(loginButton, HPos.CENTER);
-        GridPane.setMargin(submitButton, new Insets(20,0,20,0));
-
-        loginButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Scene scene = new Scene(LoginForm.loginPane, 800, 500);
-                login.createLoginForm();
-
-                Main.getStage().setScene(scene);
-                Main.getStage().show();
-            }
-        });
-
     }
 
-    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+    private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
